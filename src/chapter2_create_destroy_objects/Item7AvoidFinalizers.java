@@ -22,7 +22,7 @@ public class Item7AvoidFinalizers {
         try{
             //Do what must be done with object here
         }finally{
-            newObj.terminate(); //Explicit termination method
+            //newObj.terminate(); //Explicit termination method
         }
 
     }

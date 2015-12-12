@@ -32,8 +32,13 @@ public class Item5AvoidCreatingUnnecessaryObjects {
         //This is bad, as Java autoboxes Integer and int, which will create a huge amount of Integer instances
         //as an Integer i instance is created each time to be added to sum
         //use int sum instead of Integer sum!
+
+        //best to do this before:
+        int intFromInt = sum;
+
         for (int i = 0; i < 100000; i++) {
-            sum += i;
+            intFromInt += i; //This is not autoboxed for each loop!
+            sum += i;        //This is, and can cause slowdowns
         }
     }
 }

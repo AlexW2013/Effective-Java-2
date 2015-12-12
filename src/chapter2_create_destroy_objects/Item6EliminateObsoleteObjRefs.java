@@ -5,17 +5,23 @@ package chapter2_create_destroy_objects;
     There are still circumstances where you should be nulling obsolete references
     While this should be the exception, it should be done in classes that manage their own memory, such as a stack
  */
+
+class testObj{
+    int data;
+}
+
 public class Item6EliminateObsoleteObjRefs {
-    int[] exampleStack;
+    //int[] examplestack; There is no need to null primitive types like an int; you cannot nullify them even if you wanted too
+    testObj[] exampleStack; //You should only nullify a stack if it holds actual data objects
     private int size = 1024;
     private static final int MAX_SIZE = 1024;
 
-    public int[] newStack(){
-        exampleStack = new int[MAX_SIZE];
+    public testObj[] newStack(){
+        exampleStack = new testObj[MAX_SIZE];
         return exampleStack;
     }
 
-    public int pop(){
+    public testObj pop(){
         //The memory leak error occurs here, as although you are decrementing the size
         //The old object at size+1 is still being referenced, and will NOT be garbage collected
         //While minor, this can return significant memory leaks when your program creates many stacks and decrements them
@@ -23,9 +29,9 @@ public class Item6EliminateObsoleteObjRefs {
     }
 
     //The proper way to do this is here:
-    public int betterPop(){
-        int returnInt = exampleStack[size-1];
-        //exampleStack[size] = null; Nullify the object here, and eliminate the obsolete reference
+    public testObj betterPop(){
+        testObj returnInt = exampleStack[size-1];
+        exampleStack[size] = null; //Nullify the object here, and eliminate the obsolete reference.
         return returnInt;
 
 
