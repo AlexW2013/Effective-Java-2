@@ -1,7 +1,17 @@
 package chapter5_generics;
 
-/**
- * Created by Alex on 9/14/2016.
+import java.util.Collection;
+import java.util.LinkedList;
+
+/*
+    For projects based on JDK 1.5 and beyond, dont use raw type definitions
  */
 public class Item23DontUseRawTypes {
+
+    //Dont do this if you want a collection of only integers, instead use parameterized types
+    //This can cause a classcast exception, if a non-integer object is accidentally added into the collection
+    public Collection rawIntColl;
+
+    //Better. Adding a non-integer object will throw a compile time exception
+    public Collection<Integer> intColl;
 }
