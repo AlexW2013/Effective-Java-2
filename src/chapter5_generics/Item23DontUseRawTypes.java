@@ -4,6 +4,9 @@ import java.util.Collection;
 import java.util.LinkedList;
 
 /*
+    Chapter 5: Generics in Java
+    Generics: T, Object, Integer, Character, ect.
+
     For projects based on JDK 1.5 and beyond, dont use raw type definitions
  */
 public class Item23DontUseRawTypes {

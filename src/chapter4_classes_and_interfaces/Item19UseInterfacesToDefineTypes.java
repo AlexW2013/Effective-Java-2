@@ -6,7 +6,7 @@ package chapter4_classes_and_interfaces;
 
     An interface should only be used to show what instances of a class can do.
  */
-public class Item19UserInterfacesToDefineTypes {
+public class Item19UseInterfacesToDefineTypes {
 
     //Dont do this!!
     interface exampleConstantInterface {
