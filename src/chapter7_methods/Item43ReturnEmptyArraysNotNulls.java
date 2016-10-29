@@ -28,7 +28,8 @@ public class Item43ReturnEmptyArraysNotNulls {
     //Do this instead
     public List<Integer> returnSizeEmpty(){
         if (size.size() == 0){
-            return new ArrayList<Integer>();
+            //Return an empty list like this
+            return Collections.emptyList();
         }
         List<Integer> sizeCopy = new ArrayList<>();
         Collections.copy(size, sizeCopy);
