@@ -17,7 +17,9 @@ public class Item25PreferListsOverArrays {
         intArray[2] = "hello"; //This will throw an exception only at runtime; it will still compile
 
         //However, this will throw a compile error, which is much better for debugging purposes
+        /*
         List<Object> listOfObjects = new ArrayList<Integer>();
         listOfObjects.add("hello");
+        */
     }
 }
